@@ -11,6 +11,7 @@ namespace GhostAdvancers
     class Environment
     {
         public string levelName;
+        static public Lobby? lobby;
         public List<Donteco.Tool> tools;
 
         static public Environment? instance;
@@ -26,6 +27,14 @@ namespace GhostAdvancers
         {
             GUILayout.Label($"Current map: {instance!.levelName}");
             GUILayout.Label($"Player ID: {GameData.Id}");
+            if (lobby != null)
+            {
+                GUILayout.Label($"Lobby ID: {lobby.Id}");
+                if (lobby.Room != null)
+                {
+                    GUILayout.Label($"Room ID: {lobby.Room.GameRoomId}");
+                }
+            }
             GUI.DragWindow(new Rect(0, 0, 10000, 10000));
         }
     }
@@ -40,6 +49,14 @@ namespace GhostAdvancers
             {
                 env.tools.Add(__instance);
             }
+        }
+    }
+    [HarmonyPatch(typeof(LobbyManager), nameof(LobbyManager.ConnectToLobbyGameRoom), new Type[] { typeof(Lobby), typeof(Action) })]
+    public class LobbyManSetPatch
+    {
+        private static void Prefix(Lobby lobby, Action success)
+        {
+            Environment.lobby = lobby;
         }
     }
 }
