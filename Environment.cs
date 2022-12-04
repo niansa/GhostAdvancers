@@ -12,7 +12,8 @@ namespace GhostAdvancers
     {
         public string levelName;
         static public Lobby? lobby;
-        public List<Donteco.Tool> tools;
+        public List<Tool> tools;
+        public List<GameObject> players;
 
         static public Environment? instance;
 
@@ -20,6 +21,7 @@ namespace GhostAdvancers
         {
             levelName = _levelName;
             tools = new List<Donteco.Tool>();
+            players = new List<GameObject>();
             instance = this;
         }
         
@@ -33,6 +35,13 @@ namespace GhostAdvancers
                 if (lobby.Room != null)
                 {
                     GUILayout.Label($"Room ID: {lobby.Room.GameRoomId}");
+                    GUILayout.Label($"Server: {lobby.Room.ServerIp}:{lobby.Room.ServerPort}");
+                    string playerList = new string("");
+                    foreach (var player in lobby.Players)
+                    {
+                        playerList += $"{player.Value.Id}: {player.Value.Nickname}\n";
+                    }
+                    GUILayout.Box(playerList);
                 }
             }
             GUI.DragWindow(new Rect(0, 0, 10000, 10000));
@@ -48,6 +57,17 @@ namespace GhostAdvancers
             if (env != null && !env.tools.Contains(__instance))
             {
                 env.tools.Add(__instance);
+            }
+        }
+    }
+    [HarmonyPatch(typeof(PlayerMovementSync), "Awake", new Type[] { })]
+    public class PlayerListManAddPatch
+    {
+        private static void Prefix(PlayerMovementSync __instance)
+        {
+            if (Environment.instance != null)
+            {
+                Environment.instance.players.Add(__instance.gameObject);
             }
         }
     }

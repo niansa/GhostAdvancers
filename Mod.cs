@@ -25,8 +25,13 @@ namespace GhostAdvancers
         {
             if (Environment.instance != null)
             {
-                GUI.Window(0, new Rect(20, 20, 200, 600), Environment.window, "Environment");
+                GUI.Window(0, new Rect(20, 20, 400, 600), Environment.window, "Environment");
             }
+        }
+
+        public override void OnFixedUpdate()
+        {
+            AntiCheat.RunChecks();
         }
 
         public override void OnSceneWasLoaded(int buildIndex, string sceneName)
