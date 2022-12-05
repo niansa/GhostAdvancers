@@ -39,7 +39,6 @@ namespace GhostAdvancers
             {
                 GUI.Window(0, new Rect(150, 20, 200, 100), OutOfGameWindow, "Ghost Advancers");
             }
-            GUI.DragWindow(new Rect(0, 0, 10000, 10000));
         }
         private static void InGameWindow(int windowID)
         {

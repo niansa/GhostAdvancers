@@ -8,6 +8,7 @@ using System.Diagnostics;
 using System.Collections.Generic;
 using GhostAdvancers;
 using MhNetworking.Models;
+using System.Linq;
 
 namespace GhostAdvancers
 {
@@ -41,6 +42,7 @@ namespace GhostAdvancers
                 foreach (var player in Environment.instance.players)
                 {
                     var playerId = player.GetComponent<PlayerSetup>().SteamId.ToString();
+                    if (playerId.Length == 0) continue; // Shouldn't ever happen, but for some reason it does
                     // Add player to last known positions if needed
                     if (!lastKnownPositions.ContainsKey(playerId))
                     {
@@ -65,6 +67,27 @@ namespace GhostAdvancers
                 // Reset timer
                 timer.Restart();
             }
+        }
+    }
+    [HarmonyPatch(typeof(Tool), nameof(Tool.Take), new Type[] { typeof(Transform) })]
+    public class ToolPickRangeCheckPatch
+    {
+        public static readonly float maxGrabDistance = 3.2f;
+        public static float overgrabTolerance = 1.1f;
+
+        private static bool Prefix(InventoryTools __instance, Transform player)
+        {
+            var playerId = player.gameObject.GetComponent<PlayerSetup>().SteamId.ToString();
+            var playerPosition = player.gameObject.transform.position;
+            var toolPosition = __instance.gameObject.transform.position;
+            var distance = Vector3.Distance(playerPosition, toolPosition);
+            Melon<Mod>.Logger.Msg($"Player {playerId} is trying to pick up an item at a distance of {distance} meters");
+            if (distance > 3.2f * overgrabTolerance)
+            {
+                Melon<Mod>.Logger.Msg($"Grabbing hack detected (Player: {playerId}/{Environment.lobby.Players[playerId].Nickname})");
+                return false;
+            }
+            return true;
         }
     }
 }
