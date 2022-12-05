@@ -20,7 +20,7 @@ namespace GhostAdvancers
         public List<Tool> tools;
         public List<GameObject> players;
 
-        static public Environment? instance;
+        static public Environment? instance; // Some of the data is only available through this instance which exists only in-game
 
         public Environment(string _levelName)
         {
@@ -30,49 +30,55 @@ namespace GhostAdvancers
             instance = this;
         }
         
-        public static void window(int windowID)
+        public static void RunGUI()
         {
             if (instance != null)
             {
-                // In-Game UI
-                GUILayout.Label($"Current map: {instance!.levelName}");
-                GUILayout.Label($"Player ID: {GameData.Id}");
-                if (lobby != null)
-                {
-                    GUILayout.Label($"Lobby ID: {lobby.Id}");
-                    if (lobby.Room != null)
-                    {
-                        GUILayout.Label($"Room ID: {lobby.Room.GameRoomId}");
-                        GUILayout.Label($"Server: {lobby.Room.ServerIp}:{lobby.Room.ServerPort}");
-                        string playerList = new string("");
-                        foreach (var player in lobby.Players)
-                        {
-                            playerList += $"{player.Value.Id}: {player.Value.Nickname}\n";
-                        }
-                        GUILayout.Box(playerList);
-                    }
-                }
+                GUI.Window(0, new Rect(20, 20, 400, 600), InGameWindow, "Ghost Advancers");
             } else
             {
-                // Out-of-game UI
-                if (lobbyMan != null && menuStateMachine != null)
-                {
-                    if (quickPlay == null)
-                    {
-                        if (GUILayout.Button("Quick Play"))
-                        {
-                            QuickPlay.OnLobbyFound += QuickPlayFoundLobby;
-                            quickPlay = new QuickPlay();
-                        }
-                    }
-                    else
-                    {
-                        GUILayout.Label("Quick Play is searching...");
-                        quickPlay.RunUpdate(); // Probably shouldn't do this inside of UI but whatever
-                    }
-                }
+                GUI.Window(0, new Rect(150, 20, 200, 100), OutOfGameWindow, "Ghost Advancers");
             }
             GUI.DragWindow(new Rect(0, 0, 10000, 10000));
+        }
+        private static void InGameWindow(int windowID)
+        {
+            GUILayout.Label($"Current map: {instance!.levelName}");
+            GUILayout.Label($"Player ID: {GameData.Id}");
+            if (lobby != null)
+            {
+                GUILayout.Label($"Lobby ID: {lobby.Id}");
+                if (lobby.Room != null)
+                {
+                    GUILayout.Label($"Room ID: {lobby.Room.GameRoomId}");
+                    GUILayout.Label($"Server: {lobby.Room.ServerIp}:{lobby.Room.ServerPort}");
+                    string playerList = new string("");
+                    foreach (var player in lobby.Players)
+                    {
+                        playerList += $"{player.Value.Id}: {player.Value.Nickname}\n";
+                    }
+                    GUILayout.Box(playerList);
+                }
+            }
+        }
+        private static void OutOfGameWindow(int windowID)
+        {
+            if (lobbyMan != null && menuStateMachine != null)
+            {
+                if (quickPlay == null)
+                {
+                    if (GUILayout.Button("Quick Play"))
+                    {
+                        QuickPlay.OnLobbyFound += QuickPlayFoundLobby;
+                        quickPlay = new QuickPlay();
+                    }
+                }
+                else
+                {
+                    GUILayout.Label("Quick Play is searching...");
+                    quickPlay.RunUpdate(); // Probably shouldn't do this inside of UI but whatever
+                }
+            }
         }
         private static void QuickPlayFoundLobby(Lobby lobby)
         {
