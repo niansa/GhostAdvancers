@@ -6,6 +6,8 @@ using GhostAdvancers;
 using System.Collections.Generic;
 using System.Linq;
 using static Donteco.GameData;
+using MelonLoader;
+using TriangleNet.Topology.DCEL;
 
 namespace GhostAdvancers
 {
@@ -43,11 +45,13 @@ namespace GhostAdvancers
             // Make sure the list received isn't null
             if (lobbies != null)
             {
+                Melon<Mod>.Logger.Msg($"Received {lobbies.Length} lobbies from server");
                 // Add lobbies to new lobby list
                 newLobbyList.AddRange(lobbies);
                 // Make sure all lobbies were fetched
                 if (lobbies.Length == lobbiesPerPage)
                 {
+                    Melon<Mod>.Logger.Msg("Requesting next page...");
                     // Fetch the rest of the lobbies
                     lobbyMan.LobbiesList(++lastPage, lobbiesPerPage);
                     return;
@@ -58,7 +62,6 @@ namespace GhostAdvancers
             {
                 // Find lobbies that haven't already existed before
                 // Note: I could've done this with lambdas and shit but this seem so much more readable to me... Don't know much about them anyways, I come from the C++ world where that lambda stuff seems so much easier
-                var filteredLobbyList = new List<Lobby>();
                 foreach (var newLobby in newLobbyList)
                 {
                     var newLobbyCode = newLobby.Settings.Settings["code"].ToString();
@@ -73,12 +76,10 @@ namespace GhostAdvancers
                     }
                     if (isNew)
                     {
-                        filteredLobbyList.Add(newLobby);
+                        Melon<Mod>.Logger.Msg($"Found new lobby \"{newLobby.Title}\" ({newLobbyCode})!");
+                        OnLobbyFound.Invoke(newLobby);
+                        break;
                     }
-                }
-                // Trigger for the first new lobby found (if possible)
-                if (filteredLobbyList.Count != 0) {
-                    OnLobbyFound.Invoke(filteredLobbyList[0]);
                 }
             }
             // Clean up

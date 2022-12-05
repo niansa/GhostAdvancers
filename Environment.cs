@@ -80,6 +80,7 @@ namespace GhostAdvancers
             quickPlay = null;
             QuickPlay.OnLobbyFound -= QuickPlayFoundLobby;
             // Join lobby
+            Melon<Mod>.Logger.Msg("Joining lobby...");
             lobbyMan.ConnectLobbyViaCode(lobby.Settings.Settings["code"]);
             lobbyMan.StartStateUpdating();
             menuStateMachine.SwitchState<PublicOrPrivateGameState>();
