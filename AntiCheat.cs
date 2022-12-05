@@ -41,7 +41,7 @@ namespace GhostAdvancers
                 foreach (var player in Environment.instance.players)
                 {
                     var playerId = player.GetComponent<PlayerSetup>().SteamId.ToString();
-                    // Add player to last known positionsif it doesn't exist already
+                    // Add player to last known positions if needed
                     if (!lastKnownPositions.ContainsKey(playerId))
                     {
                         lastKnownPositions[playerId] = player.transform.position;

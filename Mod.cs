@@ -23,10 +23,7 @@ namespace GhostAdvancers
 
         public override void OnGUI()
         {
-            if (Environment.instance != null)
-            {
-                GUI.Window(0, new Rect(20, 20, 400, 600), Environment.window, "Environment");
-            }
+            GUI.Window(0, new Rect(20, 20, 400, 600), Environment.window, "Environment");
         }
 
         public override void OnFixedUpdate()
