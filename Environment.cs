@@ -34,7 +34,7 @@ namespace GhostAdvancers
         {
             if (instance != null)
             {
-                GUI.Window(0, new Rect(20, 20, 400, 600), InGameWindow, "Ghost Advancers");
+                GUI.Window(0, new Rect(20, 20, 400, 220), InGameWindow, "Ghost Advancers");
             } else
             {
                 GUI.Window(0, new Rect(150, 20, 200, 100), OutOfGameWindow, "Ghost Advancers");

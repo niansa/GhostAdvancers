@@ -14,7 +14,7 @@ namespace GhostAdvancers
     class AntiCheat
     {
         public static double interval = 1.0;
-        public static double overspeedTolerance = 1.1;
+        public static double overspeedTolerance = 1.3;
         private static Stopwatch timer;
         private static Dictionary<string, Vector3> lastKnownPositions;
 
