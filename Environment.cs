@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using MelonLoader;
 using HarmonyLib;
 using UnityEngine;
@@ -11,56 +12,91 @@ namespace GhostAdvancers
 {
     class Environment
     {
+        static public double inGameTipDuration = 7.5;
+
         static private QuickPlay? quickPlay;
 
         public string levelName;
         static public LobbyManager? lobbyMan;
         static public Lobby? lobby;
         static public MainMenuStateMachine? menuStateMachine;
+        static public bool inGameMenuVisible = false;
+        static public bool debugUI = false;
+        static private Stopwatch inGameMenuVisibleCooldownTimer;
         public List<Tool> tools;
         public List<GameObject> players;
 
         static public Environment? instance; // Some of the data is only available through this instance which exists only in-game
 
+        static Environment()
+        {
+            inGameMenuVisibleCooldownTimer = new Stopwatch();
+            inGameMenuVisibleCooldownTimer.Start();
+        }
         public Environment(string _levelName)
         {
             levelName = _levelName;
             tools = new List<Donteco.Tool>();
             players = new List<GameObject>();
             instance = this;
+            Popup.Show("Ghost Advancers Tip", "Press <b>F3</b> to show in-game UI and press <b>Tab</b> or <b>ESC</b> to use your mouse", inGameTipDuration);
+            Popup.SetSizePresetLongLine();
         }
         
         public static void RunGUI()
         {
             if (instance != null)
             {
-                GUI.Window(0, new Rect(20, 20, 400, 220), InGameWindow, "Ghost Advancers");
-            } else
+                // In-game UI toggle
+                if (Input.GetKeyDown(KeyCode.F3))
+                {
+                    if (inGameMenuVisibleCooldownTimer.Elapsed.TotalMilliseconds > 250)
+                    {
+                        inGameMenuVisible = !inGameMenuVisible;
+                        inGameMenuVisibleCooldownTimer.Restart();
+                    }
+                }
+                // In-Game UI
+                if (inGameMenuVisible)
+                {
+                    GUI.Window(0, new Rect(20, 20, 400, 220), InGameWindow, "Ghost Advancers");
+                }
+            }
+            else if (menuStateMachine != null)
             {
-                GUI.Window(0, new Rect(150, 20, 200, 100), OutOfGameWindow, "Ghost Advancers");
+                if (menuStateMachine.GetState<MainState>() == menuStateMachine.Current)
+                {
+                    // Main menu UI
+                    GUI.Window(0, new Rect(150, 20, 200, 100), MainMenuGameWindow, "Ghost Advancers");
+                }
+                else quickPlay = null;
             }
         }
         private static void InGameWindow(int windowID)
         {
+            debugUI = GUILayout.Toggle(debugUI, "Debug UI");
             GUILayout.Label($"Current map: {instance!.levelName}");
-            GUILayout.Label($"Player ID: {GameData.Id}");
-            if (lobby != null)
+            if (debugUI)
             {
-                GUILayout.Label($"Lobby ID: {lobby.Id}");
-                if (lobby.Room != null)
+                GUILayout.Label($"Player ID: {GameData.Id}");
+                if (lobby != null)
                 {
-                    GUILayout.Label($"Room ID: {lobby.Room.GameRoomId}");
-                    GUILayout.Label($"Server: {lobby.Room.ServerIp}:{lobby.Room.ServerPort}");
-                    string playerList = new string("");
-                    foreach (var player in lobby.Players)
+                    GUILayout.Label($"Lobby ID: {lobby.Id}");
+                    if (lobby.Room != null)
                     {
-                        playerList += $"{player.Value.Id}: {player.Value.Nickname}\n";
+                        GUILayout.Label($"Room ID: {lobby.Room.GameRoomId}");
+                        GUILayout.Label($"Server: {lobby.Room.ServerIp}:{lobby.Room.ServerPort}");
+                        string playerList = new string("");
+                        foreach (var player in lobby.Players)
+                        {
+                            playerList += $"{player.Value.Id}: {player.Value.Nickname}\n";
+                        }
+                        GUILayout.Box(playerList);
                     }
-                    GUILayout.Box(playerList);
                 }
             }
         }
-        private static void OutOfGameWindow(int windowID)
+        private static void MainMenuGameWindow(int windowID)
         {
             if (lobbyMan != null && menuStateMachine != null)
             {

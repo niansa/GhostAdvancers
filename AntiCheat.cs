@@ -60,7 +60,10 @@ namespace GhostAdvancers
                         var maxDistancePossible = PlayerMovementController.RunSpeed * delta;
                         if (distance > maxDistancePossible * overspeedTolerance)
                         {
-                            Melon<Mod>.Logger.Msg($"Speedhack detected (Player: {playerId}/{Environment.lobby.Players[playerId].Nickname})");
+                            var playerInfo = Environment.lobby.Players[playerId];
+                            Melon<Mod>.Logger.Msg($"Speedhack detected (Player: {playerId}/{playerInfo.Nickname})");
+                            Popup.Show("Speedhack detected", $"<b><color=red>{playerInfo.Nickname} is likely using a speedhack.</color></b>\nConsider taking action if this keeps occurring.", 20.0);
+                            Popup.SetSizePresetLongMultiLine(2);
                         }
                     }
                 }
@@ -84,7 +87,10 @@ namespace GhostAdvancers
             Melon<Mod>.Logger.Msg($"Player {playerId} is trying to pick up an item at a distance of {distance} meters");
             if (distance > 3.2f * overgrabTolerance)
             {
-                Melon<Mod>.Logger.Msg($"Grabbing hack detected (Player: {playerId}/{Environment.lobby.Players[playerId].Nickname})");
+                var playerInfo = Environment.lobby.Players[playerId];
+                Melon<Mod>.Logger.Msg($"Grabbing hack detected (Player: {playerId}/{playerInfo.Nickname})");
+                Popup.Show("Grabbing hack detected", $"<b><color=red>{playerInfo.Nickname} is using a grabbing hack..</color></b>\nConsider taking action.", 20.0);
+                Popup.SetSizePresetLongMultiLine(2);
                 return false;
             }
             return true;
