@@ -74,8 +74,7 @@ namespace GhostAdvancers
         {
             if (message != null) GUILayout.Label(message);
             else action.Invoke(windowID);
-            if (GUILayout.Button("OK")) StopShowing();
+            if (GUILayout.Button($"OK ({(int)(hideAfter - timer.Elapsed.Seconds)})")) StopShowing();
         }
     }
-
 }
