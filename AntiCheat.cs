@@ -89,7 +89,7 @@ namespace GhostAdvancers
             {
                 var playerInfo = Environment.lobby.Players[playerId];
                 Melon<Mod>.Logger.Msg($"Grabbing hack detected (Player: {playerId}/{playerInfo.Nickname})");
-                Popup.Show("Grabbing hack detected", $"<b><color=red>{playerInfo.Nickname} is using a grabbing hack..</color></b>\nConsider taking action.", 20.0);
+                Popup.Show("Grabbing hack detected", $"<b><color=red>{playerInfo.Nickname} is using a grabbing hack.</color></b>\nConsider taking action.", 20.0);
                 Popup.SetSizePresetLongMultiLine(2);
                 return false;
             }
