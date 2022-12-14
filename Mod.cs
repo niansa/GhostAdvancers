@@ -43,7 +43,7 @@ namespace GhostAdvancers
             Popup.Show("License note", "GhostAdvancers  Copyright (C) 2022  niansa/Tuxifan\n" +
                                        "This program comes with ABSOLUTELY NO WARRANTY; for details press <b>Ctrl+F10</b>.\n" +
                                        "This is free software, and you are welcome to redistribute it\n" +
-                                       "under certain conditions; press <b>Ctrl+F11</b> for details.");
+                                       "under certain conditions; press <b>Ctrl+F11</b> for details.", 30);
             Popup.SetSizePresetLongMultiLine(4);
         }
 
