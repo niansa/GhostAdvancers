@@ -15,7 +15,7 @@ Useful mods (NO CHEATS) for Ghost Wachters
 ## Installation
 1. Install MelonLoader into the game ([tutorial](https://melonwiki.xyz/#/?id=automated-installation))
 2. Start the game once
-3. Copy the [latest version](https://github.com/niansa/GhostAdvancers/releases) into the `Mods` folder
+3. Copy the [latest version](https://github.com/niansa/GhostAdvancers/releases) (the *.dll file) into the `Mods` folder
 
 ## Contribution
 If you want to participiate in the development, feel free to create pull requests or [but reports](https://github.com/niansa/GhostAdvancers/issues)!
