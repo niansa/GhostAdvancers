@@ -12,26 +12,38 @@ using System.Linq;
 
 namespace GhostAdvancers
 {
+    class PlayerLastKnownState
+    {
+        public Vector3 position;
+        public bool beingDragged = false;
+    }
+
     class AntiCheat
     {
         public static double interval = 1.0;
         public static double overspeedTolerance = 1.3;
         private static Stopwatch timer;
-        private static Dictionary<string, Vector3> lastKnownPositions;
+        private static Dictionary<string, PlayerLastKnownState> lastKnownStates;
 
-        static AntiCheat() {
+        static AntiCheat()
+        {
             timer = new Stopwatch();
             timer.Start();
-            lastKnownPositions = new Dictionary<string, Vector3>();
+            lastKnownStates = new Dictionary<string, PlayerLastKnownState>();
+        }
+        private static bool IsPlayerBeingDragged(GameObject playerObject)
+        {
+            var draggingState = playerObject.GetComponent<PlayerCapturedByGhostController>().CaptureState.Value;
+            return draggingState != -1 && draggingState != 2;
         }
         public static void RunChecks()
         {
             if (Environment.lobby == null) return;
             if (Environment.instance == null)
             {
-                if (lastKnownPositions.Count != 0) Melon<Mod>.Logger.Msg("Reset last known player positions");
+                if (lastKnownStates.Count != 0) Melon<Mod>.Logger.Msg("Reset last known player positions");
                 // Clean up last known positions if there is no instance
-                lastKnownPositions.Clear();
+                lastKnownStates.Clear();
                 return;
             }
             // Check if it's time to detect speedhacks
@@ -44,27 +56,38 @@ namespace GhostAdvancers
                     var playerId = player.GetComponent<PlayerSetup>().SteamId.ToString();
                     if (playerId.Length == 0) continue; // Shouldn't ever happen, but for some reason it does
                     // Add player to last known positions if needed
-                    if (!lastKnownPositions.ContainsKey(playerId))
+                    if (!lastKnownStates.ContainsKey(playerId))
                     {
-                        lastKnownPositions[playerId] = player.transform.position;
+                        lastKnownStates[playerId] = new PlayerLastKnownState
+                        {
+                            position = player.transform.position
+                        };
                         Melon<Mod>.Logger.Msg($"Registered player {playerId}");
                     } else
                     {
                         // Get distance between last known and current player positions
-                        var lastPos = lastKnownPositions[playerId];
+                        var lastState = lastKnownStates[playerId];
                         var newPos = player.transform.position;
-                        lastKnownPositions[playerId] = newPos;
-                        var distance = Vector2.Distance(new Vector2(lastPos.x, lastPos.z), new Vector2(newPos.x, newPos.z)); // Conversion to Vector2 since we don't want to account for the y axis
+                        bool nowBeingDragged = IsPlayerBeingDragged(player);
+                        bool beingDragged = lastState.beingDragged || nowBeingDragged;
+                        var distance = Vector2.Distance(new Vector2(lastState.position.x, lastState.position.z), new Vector2(newPos.x, newPos.z)); // Conversion to Vector2 since we don't want to account for the y axis
                         Melon<Mod>.Logger.Msg($"Distance travelled by {playerId} in {delta} seconds: {distance}");
                         // Get max distance possible for delta
                         var maxDistancePossible = PlayerMovementController.RunSpeed * delta;
-                        if (distance > maxDistancePossible * overspeedTolerance)
+                        // Run actual check
+                        if (!beingDragged && distance > maxDistancePossible * overspeedTolerance)
                         {
                             var playerInfo = Environment.lobby.Players[playerId];
                             Melon<Mod>.Logger.Msg($"Speedhack detected (Player: {playerId}/{playerInfo.Nickname})");
                             Popup.Show("Speedhack detected", $"<b><color=red>{playerInfo.Nickname} is likely using a speedhack.</color></b>\nConsider taking action if this keeps occurring.", 20.0);
                             Popup.SetSizePresetLongMultiLine(2);
                         }
+                        // Update last known state
+                        lastKnownStates[playerId] = new PlayerLastKnownState
+                        {
+                            position = newPos,
+                            beingDragged = nowBeingDragged
+                        };
                     }
                 }
                 // Reset timer
