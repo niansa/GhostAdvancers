@@ -6,7 +6,7 @@ using Donteco;
 using GhostAdvancers;
 using Lidgren.Network;
 
-[assembly: MelonInfo(typeof(Mod), "Ghost Advancers", "0.1.0", "Tuxifan <tuxifan@posteo.de>")]
+[assembly: MelonInfo(typeof(Mod), "Ghost Advancers", "1.0.0", "Tuxifan <tuxifan@posteo.de>")]
 
 
 
