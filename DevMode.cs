@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if DEBUG
+using System;
 using System.Reflection;
 using MelonLoader;
 using HarmonyLib;
@@ -63,3 +64,4 @@ namespace GhostAdvancers
         }
     }
 }
+#endif
