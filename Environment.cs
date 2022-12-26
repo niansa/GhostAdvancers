@@ -40,6 +40,7 @@ namespace GhostAdvancers
         static public bool inGameMenuVisible = false;
         static public bool debugUI = false;
         static private Stopwatch inGameMenuVisibleCooldownTimer;
+        public Stopwatch roundDuration;
         public List<Tool> tools;
         public List<GameObject> players;
 
@@ -55,6 +56,7 @@ namespace GhostAdvancers
             levelName = _levelName;
             tools = new List<Donteco.Tool>();
             players = new List<GameObject>();
+            roundDuration = new Stopwatch();
             instance = this;
             Popup.Show("Ghost Advancers Tip", "Press <b>F3</b> to show in-game UI and press <b>Tab</b> or <b>ESC</b> to use your mouse", inGameTipDuration);
             Popup.SetSizePresetLongLine();

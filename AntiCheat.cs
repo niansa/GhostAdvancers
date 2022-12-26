@@ -65,7 +65,7 @@ namespace GhostAdvancers
             }
             // Check if it's time to detect speedhacks
             double delta = timer.Elapsed.TotalMilliseconds / 1000.0; 
-            if (delta >= interval)
+            if (delta >= interval && Environment.instance.roundDuration.Elapsed.TotalSeconds > 20)
             {
                 // Interate over all players
                 foreach (var player in Environment.instance.players)
