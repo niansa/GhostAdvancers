@@ -85,8 +85,11 @@ namespace GhostAdvancers
     [HarmonyPatch(typeof(WarningScreen), "Awake", new Type[] { })]
     public class WarningScreenGPLNotePatch
     {
+        static private bool shown = false;
         private static void Prefix(WarningScreen __instance)
         {
+            if (shown) return;
+            else shown = true;
             Popup.Show("GhostAdvancers  Copyright (C) 2022  niansa/Tuxifan",
                            "This program comes with ABSOLUTELY NO WARRANTY; for details press <b>Ctrl+F10</b>.\n" +
                            "This is free software, and you are welcome to redistribute it\n" +

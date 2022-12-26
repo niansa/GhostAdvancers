@@ -10,217 +10,220 @@
       <HintPath>..\..\..\Downloads\MelonLoader.x64\MelonLoader\0Harmony.dll</HintPath>
     </Reference>
     <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\..\Desktop\Ghost Watchers\Managed\Assembly-CSharp.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Ghost Watchers\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp-firstpass">
+      <HintPath>..\..\..\Desktop\Ghost Watchers\Assembly-CSharp-firstpass.dll</HintPath>
     </Reference>
     <Reference Include="MelonLoader">
       <HintPath>..\..\..\Downloads\MelonLoader.x64\MelonLoader\MelonLoader.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine">
-      <HintPath>..\..\..\Desktop\Ghost Watchers\Managed\UnityEngine.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Ghost Watchers\UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AccessibilityModule">
-      <HintPath>..\..\..\Desktop\Ghost Watchers\Managed\UnityEngine.AccessibilityModule.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Ghost Watchers\UnityEngine.AccessibilityModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
-      <HintPath>..\..\..\Desktop\Ghost Watchers\Managed\UnityEngine.AIModule.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Ghost Watchers\UnityEngine.AIModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AndroidJNIModule">
-      <HintPath>..\..\..\Desktop\Ghost Watchers\Managed\UnityEngine.AndroidJNIModule.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Ghost Watchers\UnityEngine.AndroidJNIModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AnimationModule">
-      <HintPath>..\..\..\Desktop\Ghost Watchers\Managed\UnityEngine.AnimationModule.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Ghost Watchers\UnityEngine.AnimationModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.ARModule">
-      <HintPath>..\..\..\Desktop\Ghost Watchers\Managed\UnityEngine.ARModule.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Ghost Watchers\UnityEngine.ARModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AssetBundleModule">
-      <HintPath>..\..\..\Desktop\Ghost Watchers\Managed\UnityEngine.AssetBundleModule.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Ghost Watchers\UnityEngine.AssetBundleModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AudioModule">
-      <HintPath>..\..\..\Desktop\Ghost Watchers\Managed\UnityEngine.AudioModule.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Ghost Watchers\UnityEngine.AudioModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.ClothModule">
-      <HintPath>..\..\..\Desktop\Ghost Watchers\Managed\UnityEngine.ClothModule.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Ghost Watchers\UnityEngine.ClothModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.ClusterInputModule">
-      <HintPath>..\..\..\Desktop\Ghost Watchers\Managed\UnityEngine.ClusterInputModule.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Ghost Watchers\UnityEngine.ClusterInputModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.ClusterRendererModule">
-      <HintPath>..\..\..\Desktop\Ghost Watchers\Managed\UnityEngine.ClusterRendererModule.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Ghost Watchers\UnityEngine.ClusterRendererModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>..\..\..\Desktop\Ghost Watchers\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Ghost Watchers\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.CrashReportingModule">
-      <HintPath>..\..\..\Desktop\Ghost Watchers\Managed\UnityEngine.CrashReportingModule.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Ghost Watchers\UnityEngine.CrashReportingModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.DirectorModule">
-      <HintPath>..\..\..\Desktop\Ghost Watchers\Managed\UnityEngine.DirectorModule.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Ghost Watchers\UnityEngine.DirectorModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.DSPGraphModule">
-      <HintPath>..\..\..\Desktop\Ghost Watchers\Managed\UnityEngine.DSPGraphModule.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Ghost Watchers\UnityEngine.DSPGraphModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.GameCenterModule">
-      <HintPath>..\..\..\Desktop\Ghost Watchers\Managed\UnityEngine.GameCenterModule.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Ghost Watchers\UnityEngine.GameCenterModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.GIModule">
-      <HintPath>..\..\..\Desktop\Ghost Watchers\Managed\UnityEngine.GIModule.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Ghost Watchers\UnityEngine.GIModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.GridModule">
-      <HintPath>..\..\..\Desktop\Ghost Watchers\Managed\UnityEngine.GridModule.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Ghost Watchers\UnityEngine.GridModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.HotReloadModule">
-      <HintPath>..\..\..\Desktop\Ghost Watchers\Managed\UnityEngine.HotReloadModule.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Ghost Watchers\UnityEngine.HotReloadModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.ImageConversionModule">
-      <HintPath>..\..\..\Desktop\Ghost Watchers\Managed\UnityEngine.ImageConversionModule.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Ghost Watchers\UnityEngine.ImageConversionModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.IMGUIModule">
-      <HintPath>..\..\..\Desktop\Ghost Watchers\Managed\UnityEngine.IMGUIModule.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Ghost Watchers\UnityEngine.IMGUIModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.InputLegacyModule">
-      <HintPath>..\..\..\Desktop\Ghost Watchers\Managed\UnityEngine.InputLegacyModule.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Ghost Watchers\UnityEngine.InputLegacyModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.InputModule">
-      <HintPath>..\..\..\Desktop\Ghost Watchers\Managed\UnityEngine.InputModule.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Ghost Watchers\UnityEngine.InputModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.JSONSerializeModule">
-      <HintPath>..\..\..\Desktop\Ghost Watchers\Managed\UnityEngine.JSONSerializeModule.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Ghost Watchers\UnityEngine.JSONSerializeModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.LocalizationModule">
-      <HintPath>..\..\..\Desktop\Ghost Watchers\Managed\UnityEngine.LocalizationModule.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Ghost Watchers\UnityEngine.LocalizationModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.NVIDIAModule">
-      <HintPath>..\..\..\Desktop\Ghost Watchers\Managed\UnityEngine.NVIDIAModule.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Ghost Watchers\UnityEngine.NVIDIAModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.ParticleSystemModule">
-      <HintPath>..\..\..\Desktop\Ghost Watchers\Managed\UnityEngine.ParticleSystemModule.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Ghost Watchers\UnityEngine.ParticleSystemModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.PerformanceReportingModule">
-      <HintPath>..\..\..\Desktop\Ghost Watchers\Managed\UnityEngine.PerformanceReportingModule.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Ghost Watchers\UnityEngine.PerformanceReportingModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Physics2DModule">
-      <HintPath>..\..\..\Desktop\Ghost Watchers\Managed\UnityEngine.Physics2DModule.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Ghost Watchers\UnityEngine.Physics2DModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.PhysicsModule">
-      <HintPath>..\..\..\Desktop\Ghost Watchers\Managed\UnityEngine.PhysicsModule.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Ghost Watchers\UnityEngine.PhysicsModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.ProfilerModule">
-      <HintPath>..\..\..\Desktop\Ghost Watchers\Managed\UnityEngine.ProfilerModule.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Ghost Watchers\UnityEngine.ProfilerModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule">
-      <HintPath>..\..\..\Desktop\Ghost Watchers\Managed\UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Ghost Watchers\UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.ScreenCaptureModule">
-      <HintPath>..\..\..\Desktop\Ghost Watchers\Managed\UnityEngine.ScreenCaptureModule.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Ghost Watchers\UnityEngine.ScreenCaptureModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.SharedInternalsModule">
-      <HintPath>..\..\..\Desktop\Ghost Watchers\Managed\UnityEngine.SharedInternalsModule.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Ghost Watchers\UnityEngine.SharedInternalsModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.SpriteMaskModule">
-      <HintPath>..\..\..\Desktop\Ghost Watchers\Managed\UnityEngine.SpriteMaskModule.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Ghost Watchers\UnityEngine.SpriteMaskModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.SpriteShapeModule">
-      <HintPath>..\..\..\Desktop\Ghost Watchers\Managed\UnityEngine.SpriteShapeModule.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Ghost Watchers\UnityEngine.SpriteShapeModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.StreamingModule">
-      <HintPath>..\..\..\Desktop\Ghost Watchers\Managed\UnityEngine.StreamingModule.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Ghost Watchers\UnityEngine.StreamingModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.SubstanceModule">
-      <HintPath>..\..\..\Desktop\Ghost Watchers\Managed\UnityEngine.SubstanceModule.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Ghost Watchers\UnityEngine.SubstanceModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.SubsystemsModule">
-      <HintPath>..\..\..\Desktop\Ghost Watchers\Managed\UnityEngine.SubsystemsModule.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Ghost Watchers\UnityEngine.SubsystemsModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TerrainModule">
-      <HintPath>..\..\..\Desktop\Ghost Watchers\Managed\UnityEngine.TerrainModule.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Ghost Watchers\UnityEngine.TerrainModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TerrainPhysicsModule">
-      <HintPath>..\..\..\Desktop\Ghost Watchers\Managed\UnityEngine.TerrainPhysicsModule.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Ghost Watchers\UnityEngine.TerrainPhysicsModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TextCoreFontEngineModule">
-      <HintPath>..\..\..\Desktop\Ghost Watchers\Managed\UnityEngine.TextCoreFontEngineModule.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Ghost Watchers\UnityEngine.TextCoreFontEngineModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TextCoreTextEngineModule">
-      <HintPath>..\..\..\Desktop\Ghost Watchers\Managed\UnityEngine.TextCoreTextEngineModule.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Ghost Watchers\UnityEngine.TextCoreTextEngineModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TextRenderingModule">
-      <HintPath>..\..\..\Desktop\Ghost Watchers\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Ghost Watchers\UnityEngine.TextRenderingModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TilemapModule">
-      <HintPath>..\..\..\Desktop\Ghost Watchers\Managed\UnityEngine.TilemapModule.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Ghost Watchers\UnityEngine.TilemapModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TLSModule">
-      <HintPath>..\..\..\Desktop\Ghost Watchers\Managed\UnityEngine.TLSModule.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Ghost Watchers\UnityEngine.TLSModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UaaLAnalyticsModule">
-      <HintPath>..\..\..\Desktop\Ghost Watchers\Managed\UnityEngine.UaaLAnalyticsModule.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Ghost Watchers\UnityEngine.UaaLAnalyticsModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>..\..\..\Desktop\Ghost Watchers\Managed\UnityEngine.UI.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Ghost Watchers\UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UIElementsModule">
-      <HintPath>..\..\..\Desktop\Ghost Watchers\Managed\UnityEngine.UIElementsModule.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Ghost Watchers\UnityEngine.UIElementsModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UIElementsNativeModule">
-      <HintPath>..\..\..\Desktop\Ghost Watchers\Managed\UnityEngine.UIElementsNativeModule.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Ghost Watchers\UnityEngine.UIElementsNativeModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UIModule">
-      <HintPath>..\..\..\Desktop\Ghost Watchers\Managed\UnityEngine.UIModule.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Ghost Watchers\UnityEngine.UIModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UmbraModule">
-      <HintPath>..\..\..\Desktop\Ghost Watchers\Managed\UnityEngine.UmbraModule.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Ghost Watchers\UnityEngine.UmbraModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UNETModule">
-      <HintPath>..\..\..\Desktop\Ghost Watchers\Managed\UnityEngine.UNETModule.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Ghost Watchers\UnityEngine.UNETModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UnityAnalyticsModule">
-      <HintPath>..\..\..\Desktop\Ghost Watchers\Managed\UnityEngine.UnityAnalyticsModule.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Ghost Watchers\UnityEngine.UnityAnalyticsModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UnityConnectModule">
-      <HintPath>..\..\..\Desktop\Ghost Watchers\Managed\UnityEngine.UnityConnectModule.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Ghost Watchers\UnityEngine.UnityConnectModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UnityCurlModule">
-      <HintPath>..\..\..\Desktop\Ghost Watchers\Managed\UnityEngine.UnityCurlModule.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Ghost Watchers\UnityEngine.UnityCurlModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UnityTestProtocolModule">
-      <HintPath>..\..\..\Desktop\Ghost Watchers\Managed\UnityEngine.UnityTestProtocolModule.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Ghost Watchers\UnityEngine.UnityTestProtocolModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UnityWebRequestAssetBundleModule">
-      <HintPath>..\..\..\Desktop\Ghost Watchers\Managed\UnityEngine.UnityWebRequestAssetBundleModule.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Ghost Watchers\UnityEngine.UnityWebRequestAssetBundleModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UnityWebRequestAudioModule">
-      <HintPath>..\..\..\Desktop\Ghost Watchers\Managed\UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Ghost Watchers\UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UnityWebRequestModule">
-      <HintPath>..\..\..\Desktop\Ghost Watchers\Managed\UnityEngine.UnityWebRequestModule.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Ghost Watchers\UnityEngine.UnityWebRequestModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UnityWebRequestTextureModule">
-      <HintPath>..\..\..\Desktop\Ghost Watchers\Managed\UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Ghost Watchers\UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UnityWebRequestWWWModule">
-      <HintPath>..\..\..\Desktop\Ghost Watchers\Managed\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Ghost Watchers\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.VehiclesModule">
-      <HintPath>..\..\..\Desktop\Ghost Watchers\Managed\UnityEngine.VehiclesModule.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Ghost Watchers\UnityEngine.VehiclesModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.VFXModule">
-      <HintPath>..\..\..\Desktop\Ghost Watchers\Managed\UnityEngine.VFXModule.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Ghost Watchers\UnityEngine.VFXModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.VideoModule">
-      <HintPath>..\..\..\Desktop\Ghost Watchers\Managed\UnityEngine.VideoModule.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Ghost Watchers\UnityEngine.VideoModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.VirtualTexturingModule">
-      <HintPath>..\..\..\Desktop\Ghost Watchers\Managed\UnityEngine.VirtualTexturingModule.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Ghost Watchers\UnityEngine.VirtualTexturingModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.VRModule">
-      <HintPath>..\..\..\Desktop\Ghost Watchers\Managed\UnityEngine.VRModule.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Ghost Watchers\UnityEngine.VRModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.WindModule">
-      <HintPath>..\..\..\Desktop\Ghost Watchers\Managed\UnityEngine.WindModule.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Ghost Watchers\UnityEngine.WindModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.XRModule">
-      <HintPath>..\..\..\Desktop\Ghost Watchers\Managed\UnityEngine.XRModule.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Ghost Watchers\UnityEngine.XRModule.dll</HintPath>
     </Reference>
   </ItemGroup>
 
